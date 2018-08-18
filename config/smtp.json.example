@@ -1,0 +1,10 @@
+{
+  "host": "smtp.126.com",
+  "port": 25,
+  "secure": false,
+  "from": "drxxxs@126.com",
+  "auth": {
+      "user": "drxxx",
+      "pass": "drxxx"
+  }
+}

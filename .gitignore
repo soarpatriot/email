@@ -1,0 +1,8 @@
+
+config/token.json
+
+config/smtp.json
+
+node_modules
+
+*.swp

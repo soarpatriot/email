@@ -1,0 +1,19 @@
+version: '3'
+services:
+  note:
+    image: node:8.11.3-alpine
+    volumes:
+      - ./:/app/www/email
+    working_dir: /app/www/email
+    restart: always
+    depends_on:
+      - install
+    ports:
+      - 3000:3000
+    command: npm run start
+  install:
+    image: node:8.11.3-alpine
+    volumes:
+      - ./:/app/www/email
+    working_dir: /app/www/email
+    command: npm install

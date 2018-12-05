@@ -1,4 +1,6 @@
 const router = require('koa-router')()
+const translate = require('google-translate-api');
+const request = require('superagent');
 
 router.get('/', async (ctx, next) => {
   await ctx.render('index', {
@@ -6,14 +8,19 @@ router.get('/', async (ctx, next) => {
   })
 })
 
-router.get('/string', async (ctx, next) => {
-  ctx.body = 'koa2 string'
+router.get('/t', async (ctx, next) => {
+  let res = await translate('english', {from: 'en', to: 'nl'})
+  ctx.render('index', {
+    title: 'Hello Koa 2!'
+  })
 })
 
-router.get('/json', async (ctx, next) => {
-  console.log(a)
+router.get('/test', async (ctx, next) => {
+  const res = await request
+  .get('http://140.143.202.92:9500/test')
+
   ctx.body = {
-    title: 'koa2 json'
+    title: res
   }
 })
 

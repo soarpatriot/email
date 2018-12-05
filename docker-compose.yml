@@ -5,7 +5,6 @@ services:
     volumes:
       - ./:/app/www/email
     working_dir: /app/www/email
-    restart: always
     depends_on:
       - install
     ports:

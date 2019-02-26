@@ -17,7 +17,7 @@ router.get('/t', async (ctx, next) => {
 
 router.get('/test', async (ctx, next) => {
   const res = await request
-  .get('http://140.143.202.92:9500/test')
+  .get('https://yun.dreamreality.cn/test')
 
   ctx.body = {
     title: res

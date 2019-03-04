@@ -24,4 +24,13 @@ router.get('/test', async (ctx, next) => {
   }
 })
 
+router.get('/test-long', async (ctx, next) => {
+  const res = await request
+  .get('https://yun.dreamreality.cn/medium')
+
+  ctx.body = {
+    title: res
+  }
+})
+
 module.exports = router

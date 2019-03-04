@@ -20,7 +20,7 @@ router.get('/test', async (ctx, next) => {
   .get('https://yun.dreamreality.cn/test')
 
   ctx.body = {
-    title: res
+    title: res.text
   }
 })
 
@@ -29,7 +29,7 @@ router.get('/test-long', async (ctx, next) => {
   .get('https://yun.dreamreality.cn/medium')
 
   ctx.body = {
-    title: res
+    title: res.text
   }
 })
 

@@ -24,10 +24,27 @@ router.get('/test', async (ctx, next) => {
   }
 })
 
-router.get('/test-long', async (ctx, next) => {
+router.get('/long', async (ctx, next) => {
   const res = await request
   .get('https://yun.dreamreality.cn/medium')
 
+  ctx.body = {
+    title: res.text
+  }
+})
+
+router.get('/normal', async (ctx, next) => {
+  const res = await request
+  .get('https://yun.dreamreality.cn/normal')
+
+  ctx.body = {
+    title: res.text
+  }
+})
+
+router.get('/short', async (ctx, next) => {
+  const res = await request
+  .get('https://yun.dreamreality.cn/short')
   ctx.body = {
     title: res.text
   }
